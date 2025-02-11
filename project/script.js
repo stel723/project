@@ -15,7 +15,6 @@ function calculateResult() {
     try {
         let expression = display.value;
 
-        // Обработка квадратного корня
         if (expression.includes('√')) {
             let number = expression.replace('√', '');
             display.value = Math.sqrt(parseFloat(number));
