@@ -1,0 +1,13 @@
+#game-container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    background: white;
+    border-radius: 5px;
+    position: absolute;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
