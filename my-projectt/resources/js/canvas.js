@@ -15,7 +15,15 @@ CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, r) {
 document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
+    const cardImages = {};
 
+    function preloadCards() {
+        const suits = ['hearts', 'diamonds', 'clubs', 'spades'];
+        suits.forEach(suit => {
+            cardImages[suit] = new Image();
+            cardImages[suit].src = `/images/${suit}.png`;
+    });
+    }
     // Базовая отрисовка карты
     function drawCard(x, y, width, height, rank, suit, isFaceUp = true) {
         ctx.save();
@@ -34,7 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ctx.font = `${width/5}px Arial`;
             ctx.fillText(`${rank}${getSuitSymbol(suit)}`, x + 10, y + 25);
         }
-
+        // В canvas.js
+        if (typeof gameData !== 'undefined') {
+            gameData.forEach(card => {
+            drawCard(card.x, card.y, 100, 150, card.rank, card.suit);
+        });
+}
         ctx.restore();
     }
 
@@ -47,6 +60,21 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         return symbols[suit] || '';
     }
+
+    function animateCard(card, targetX, targetY) {
+    const dx = (targetX - card.x) / 20;
+    const dy = (targetY - card.y) / 20;
+    
+    const animation = setInterval(() => {
+        card.x += dx;
+        card.y += dy;
+        
+        if (Math.abs(card.x - targetX) < 1) {
+            clearInterval(animation);
+        }
+        redrawGame();
+    }, 16);
+}
 
     // Пример: отрисовка тестовой карты
     drawCard(50, 50, 100, 150, 'K', 'hearts');
