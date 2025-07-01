@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+#gameCanvas {
+    display: block;
+    margin: 20px auto;
+    background: #2e8b57; /* Зеленое поле */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
