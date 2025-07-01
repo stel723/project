@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title', 'Пасьянс')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 </head>
 <body>
     <header>
         <h1>Пасьянс</h1>
         <p>Добро пожаловать! Игра находится в разработке.</p>
     </header>
-<script>
-    const gameData = @json($cards);
-</script>
+
 
     <div id="game-area">
 
