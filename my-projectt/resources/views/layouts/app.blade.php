@@ -38,7 +38,7 @@
             position: relative;
         }
         
-        /* Расположение игровых зон */
+
         #stock {
             background-color: #1a4b8c;
             grid-column: 1;
@@ -86,11 +86,11 @@
     <div id="game-area">
 
         <div class="card-area" id="stock">Колода</div>
-        <div class="card-area" id="waste">Мусор</div>
+        <div class="card-area" id="waste">Пересдача</div>
 
 
         @for ($i = 1; $i <= 4; $i++)
-            <div class="card-area" id="foundation{{ $i }}">Фундамент {{ $i }}</div>
+            <div class="card-area" id="foundation{{ $i }}">Стопка {{ $i }}</div>
         @endfor
 
 
