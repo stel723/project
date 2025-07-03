@@ -27,3 +27,10 @@ Route::post('/upload', function (Request $request) {
 });
 
 Route::view('/upload', 'upload'); // Показываем форму
+
+Route::get('/check-dirs', function() {
+    return [
+        'storage_exists' => file_exists(storage_path('app/cards')),
+        'public_exists' => file_exists(public_path('storage'))
+    ];
+});
