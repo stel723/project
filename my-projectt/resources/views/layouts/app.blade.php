@@ -5,7 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title', 'Пасьянс')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2a6e3f;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        #game-area {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+    </style>
 </head>
 <body>
     <header>
