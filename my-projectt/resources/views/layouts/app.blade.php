@@ -6,6 +6,7 @@
     <title>@yield('title', 'Пасьянс')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
+        /* Основные стили */
         body {
             font-family: Arial, sans-serif;
             background-color: #2a6e3f;
@@ -27,6 +28,52 @@
             margin: 0 auto;
         }
         
+        .card-area {
+            height: 120px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        /* Расположение игровых зон */
+        #stock {
+            background-color: #1a4b8c;
+            grid-column: 1;
+            grid-row: 1;
+        }
+        
+        #waste {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        
+        #foundation1 { grid-column: 4; grid-row: 1; }
+        #foundation2 { grid-column: 5; grid-row: 1; }
+        #foundation3 { grid-column: 6; grid-row: 1; }
+        #foundation4 { grid-column: 7; grid-row: 1; }
+        
+        [id^="tableau"] {
+            height: 200px;
+            grid-row: 2;
+        }
+        
+        /* Стили карт */
+        .card {
+            width: 80px;
+            height: 120px;
+            background: white;
+            border-radius: 5px;
+            position: absolute;
+            color: black;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        
+        .card.red { color: red; }
+        .card.black { color: black; }
     </style>
 </head>
 <body>
